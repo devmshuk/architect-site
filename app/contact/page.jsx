@@ -12,7 +12,7 @@ export default function Contact() {
     <section>
       <p className="eyebrow">CONTACT</p>
       <h1>Happy to talk through a hard architecture problem.</h1>
-      <p className="sub">If you&rsquo;re weighing an architecture decision, scaling a commerce platform, or building a team to do it — I&rsquo;m glad to think it through with you. No pitch, no agenda.</p>
+      <p className="sub">If you are weighing a design decision, or working out how a commerce platform should grow, I am glad to think it through with you. No pitch, no agenda.</p>
       <div className="grid" style={{ marginTop: 24 }}>
         {channels.map(([label, value, href]) => {
           const inner = (

@@ -1,17 +1,22 @@
 import { getAllStudies } from '../../lib/studies';
 
-export const metadata = { title: 'Architecture Studies — Dev Mani Shukla' };
+export const metadata = { title: 'Studies — Dev Mani Shukla' };
 
 export default function StudiesIndex() {
   const studies = getAllStudies();
   return (
     <section>
-      <p className="eyebrow">ARCHITECTURE STUDIES</p>
-      <h1>Design studies in commerce-at-scale.</h1>
+      <p className="eyebrow">DESIGN STUDIES</p>
+      <h1>Working through hard problems in commerce at scale.</h1>
       <p className="sub">
-        Self-directed design studies and proofs of concept — not client
-        deliverables. Each works through the context, the options, and the
-        trade-offs behind the call.
+        Each study takes one problem, sets out the options, and explains the
+        reasoning behind the choice — including what the choice costs.
+      </p>
+      <p className="muted">
+        Every study opens with a short, plain summary of what the decision gives
+        you and what it puts at risk. The detail below it is for people who build
+        these systems. These are self-directed studies, not client work, and they
+        contain no client names or numbers.
       </p>
       <div style={{ marginTop: 32 }}>
         {studies.map((s) => (

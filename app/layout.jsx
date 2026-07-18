@@ -2,9 +2,9 @@ import './globals.css';
 import ThemeToggle from '../components/ThemeToggle';
 
 export const metadata = {
-  title: 'Dev Mani Shukla — Enterprise Commerce Architecture at Scale',
+  title: 'Dev Mani Shukla — Commerce Architecture at Scale',
   description:
-    'I make large commerce platforms faster to launch on, cheaper to run, and steadier under pressure.',
+    'Design notes on commerce platforms that stay simple as they grow: where to place the boundaries, what each choice buys, and what it costs.',
 };
 
 export default function RootLayout({ children }) {
@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
             <a href="/ai">AI for Architects</a>
             <a href="/library">Library</a>
             <a href="/about">About</a>
-            <a href="/resume.pdf" target="_blank" rel="noopener">Resume</a>
+            <a href="/resume.pdf" target="_blank" rel="noopener">CV</a>
             <a href="/contact">Contact</a>
           </nav>
           <ThemeToggle />

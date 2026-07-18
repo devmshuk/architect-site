@@ -1,23 +1,24 @@
 const sections = [
-  ['Studies', 'Deep design studies in commerce-at-scale — the reasoning, not just the result.', '/studies'],
-  ['AI for Architects', 'Using GenAI as a consistency engine for architecture work.', '/ai'],
-  ['Library', 'Reusable patterns and architecture decision records.', '/library'],
-  ['About', 'Seven-plus years designing the systems teams build within.', '/about'],
+  ['Studies', 'Long-form design studies. Each one works through a real problem, the options, and the trade-offs.', '/studies'],
+  ['Library', 'Short patterns and decisions. What each one solves, and when not to use it.', '/library'],
+  ['AI for Architects', 'Using AI to make architecture writing consistent, without handing over the judgment.', '/ai'],
+  ['About', 'How I think about this work.', '/about'],
 ];
 
 export default function Home() {
   return (
     <section>
-      <p className="eyebrow">ENTERPRISE COMMERCE · ARCHITECTURE AT SCALE</p>
-      <h1>I make large commerce platforms faster to launch on, cheaper to run, and steadier under pressure.</h1>
-      <p className="sub">The hardest problems are rarely in the code — they live in the seams between systems, teams, and constraints. That&rsquo;s what I design for.</p>
-      <p>Across a 100+ site, multi-brand Salesforce Commerce Cloud estate, I turn tangled integrations into systems teams can reason about — and turn work that used to take weeks per site into a repeatable rollout measured in days. My depth is SFCC; the way I think — boundaries, contracts, trade-offs — carries across commerce platforms.</p>
+      <p className="eyebrow">COMMERCE ARCHITECTURE AT SCALE</p>
+      <h1>Design notes on commerce platforms that stay simple as they grow.</h1>
+      <p className="sub">Large commerce platforms get harder to change as they grow. The reason is rarely the code. It is usually the boundaries — between systems, between teams, and around the rules a business cannot change.</p>
+      <p>These notes work through those problems: how to place the boundaries, what each choice buys you, and what it costs. The examples come from Salesforce Commerce Cloud, where I work day to day. The thinking applies to any commerce platform of this size.</p>
+      <p className="muted">Written for two readers. If you build these systems, each study goes into the mechanics and the trade-offs. If you plan or run them, each study opens with a short, plain summary of what the decision gives you and what it puts at risk.</p>
       <div className="grid" style={{ marginTop: 40 }}>
         {sections.map(([t, d, href]) => (
           <a className="card" key={t} href={href}>
             <strong>{t}</strong>
             <p className="muted" style={{ marginTop: 8 }}>{d}</p>
-            <span style={{ color: 'var(--accent)', fontSize: 14 }}>Explore &rarr;</span>
+            <span style={{ color: 'var(--accent)', fontSize: 14 }}>Read &rarr;</span>
           </a>
         ))}
       </div>

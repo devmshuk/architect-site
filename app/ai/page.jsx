@@ -4,22 +4,27 @@ export default function AI() {
   return (
     <section>
       <p className="eyebrow">AI FOR ARCHITECTS</p>
-      <h1>Using GenAI as a consistency engine for architecture work — not a novelty.</h1>
-      <p className="sub">Most &ldquo;AI in engineering&rdquo; stories are about writing code faster. The more interesting question for an architect is different: can AI make the <em>thinking</em> more consistent, without outsourcing the judgment?</p>
+      <h1>Using AI to make architecture writing consistent, without handing over the judgment.</h1>
+      <p className="sub">Most stories about AI in engineering are about writing code faster. For an architect the more useful question is different: can AI make the thinking more consistent, without taking over the decisions?</p>
 
-      <h2>The Technical Solution Design framework</h2>
-      <p>Technical Solution Designs (TSDs) are how an architecture decision gets written down so a team can build to it. Done by hand across many people, they drift: different structure, different depth, sections quietly missing. That inconsistency is a governance problem, not a writing problem.</p>
-      <p>So I designed a reusable TSD framework in Markdown that encodes every standard section a design must cover. A single business-requirement input can then generate a complete, consistent first-draft TSD via GitHub Copilot — same shape, same rigour, every time. I contributed to the initial Copilot proof-of-concept that guided how the wider team adopted GenAI in delivery.</p>
+      <p className="muted">Why this matters: architecture decisions get written down so a team can build to them. When many people write those documents by hand, they come out different every time, and sections quietly go missing. A missing section is not a writing problem. It is how a risk reaches production without anyone noticing.</p>
 
-      <h2>The principle behind it</h2>
-      <p>AI here is a <strong>consistency and completeness engine</strong>, not a decision-maker. It guarantees the design considered payments, consent, failure modes, and integration contracts — because the framework forces those sections. It does not decide the trade-offs; the architect still owns every call, and reviews every line. The value is that no design silently skips the section that would have caught the problem.</p>
+      <h2>The problem with writing designs by hand</h2>
+      <p>A technical solution design is the document that records how something will be built, and why. Written by many people over time, these documents drift apart. Different structure, different depth, and sometimes an important section — payments, consent, what happens when a system fails — is simply absent.</p>
+      <p>The inconsistency is the real issue. If one design considers failure cases and the next one does not, the second team is not being careless. They just had no prompt to think about it.</p>
+
+      <h2>The approach</h2>
+      <p>I built a reusable template in Markdown that sets out every section a design must cover. A single business requirement can then produce a complete first draft in that shape, using GitHub Copilot. The result is the same structure and the same level of rigour every time. I also worked on the early proof of concept that shaped how the wider team adopted these tools.</p>
+
+      <h2>The principle</h2>
+      <p>AI here is used for <strong>consistency and completeness</strong>, not for deciding. The template guarantees that the design considered payments, consent, failure cases, and integration contracts, because those sections are always there. It does not decide the trade-offs. The architect still owns every decision and reviews every line.</p>
       <ul>
-        <li><strong>Structure is enforced, judgment stays human.</strong> The template can&rsquo;t be argued out of asking the hard questions.</li>
-        <li><strong>Speed compounds at the boundary.</strong> A consistent first draft turns a blank page into a review — the expensive part becomes the cheap part.</li>
-        <li><strong>Governed adoption.</strong> A shared framework is how a team uses GenAI without every output looking different.</li>
+        <li><strong>The structure is fixed; the judgment stays human.</strong> A template cannot be talked out of asking the difficult question.</li>
+        <li><strong>The saving is at the start.</strong> A consistent first draft turns a blank page into something to review. The slow part becomes the quick part.</li>
+        <li><strong>Shared tools need a shared shape.</strong> A common template is how a team can use these tools without every output looking different.</li>
       </ul>
 
-      <p className="muted">Salesforce Certified AI Associate. Turning this into a live, interactive TSD generator is the next thing I want to build into this site — the reason it runs on a real application framework rather than static pages.</p>
+      <p className="muted">A working, interactive version of this generator is something I would like to build into this site. It is the reason the site runs on a real application framework rather than as fixed pages.</p>
     </section>
   );
 }
