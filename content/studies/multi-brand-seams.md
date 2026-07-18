@@ -45,10 +45,10 @@ That single question decides which side of the seam it belongs on. In SFCC the l
 
 ```mermaid
 flowchart TB
-    CORE["core / base — shared contract and behaviour, owned centrally, changes rarely"]
-    BRAND["brand — brand-level identity and rules"]
-    MARKET["market — country / regulatory / commercial differences"]
-    SITE["site — the thin, genuinely site-specific tail"]
+    CORE["core / base — shared, changes rarely"]
+    BRAND["brand — identity and rules"]
+    MARKET["market — country and commercial"]
+    SITE["site — the thin, specific tail"]
     CORE --> BRAND --> MARKET --> SITE
 ```
 
