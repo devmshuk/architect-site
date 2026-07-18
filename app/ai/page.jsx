@@ -1,5 +1,3 @@
-import TsdGenerator from '../../components/TsdGenerator';
-
 export const metadata = { title: 'AI for Architects — Dev Mani Shukla' };
 
 export default function AI() {
@@ -26,11 +24,6 @@ export default function AI() {
         <li><strong>Shared tools need a shared shape.</strong> A common template is how a team can use these tools without every output looking different.</li>
       </ul>
 
-      <h2>Try it</h2>
-      <p>This is the template, working. Type a requirement and it produces the full outline below. It runs entirely in your browser and sends nothing anywhere.</p>
-      <p className="muted">Notice what it does not do. It does not decide anything. Every point that needs judgment is left as a TODO, including the non-functional numbers — because the honest answer to &ldquo;how fast must this be at peak?&rdquo; is a conversation with the business, not a guess. The template&rsquo;s only job is to make sure the question gets asked every time.</p>
-
-      <TsdGenerator />
     </section>
   );
 }

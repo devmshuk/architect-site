@@ -1,5 +1,4 @@
 import TranslationNotice from '../../../components/TranslationNotice';
-import TsdGenerator from '../../../components/TsdGenerator';
 
 export const metadata = { title: 'IA pour architectes — Dev Mani Shukla' };
 
@@ -28,12 +27,6 @@ export default function AIFr() {
         <li><strong>Des outils partagés demandent une forme partagée.</strong> Un modèle commun permet à une équipe d’utiliser ces outils sans que chaque résultat soit différent.</li>
       </ul>
 
-      <h2>Essayez</h2>
-      <p>Voici le modèle, en fonctionnement. Saisissez une exigence et il produit le plan complet ci-dessous. Tout se passe dans votre navigateur ; rien n’est envoyé nulle part.</p>
-      <p className="muted">Remarquez ce qu’il ne fait pas. Il ne décide rien. Chaque point qui demande du jugement reste marqué TODO, y compris les valeurs non fonctionnelles — car la réponse honnête à « quelle vitesse en période de pointe ? » est une discussion avec l’entreprise, pas une supposition. Le seul rôle du modèle est de garantir que la question est posée à chaque fois.</p>
-      <p className="muted"><em>Remarque : le plan généré est en anglais.</em></p>
-
-      <TsdGenerator />
     </section>
   );
 }
