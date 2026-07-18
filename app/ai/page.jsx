@@ -19,7 +19,7 @@ export default function AI() {
         <li><strong>Governed adoption.</strong> A shared framework is how a team uses GenAI without every output looking different.</li>
       </ul>
 
-      <p className="muted">Salesforce Certified AI Associate. A live, interactive version of the TSD generator is the next thing I&rsquo;m building into this site — the reason it runs on a real application framework rather than static pages.</p>
+      <p className="muted">Salesforce Certified AI Associate. Turning this into a live, interactive TSD generator is the next thing I want to build into this site — the reason it runs on a real application framework rather than static pages.</p>
     </section>
   );
 }

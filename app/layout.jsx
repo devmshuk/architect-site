@@ -30,7 +30,7 @@ export default function RootLayout({ children }) {
             <a href="/contact" style={{ color: 'var(--accent)', fontSize: 14 }}>devmanis.757@gmail.com &rarr;</a>
           </div>
           <p className="mono muted" style={{ fontSize: 12.5, textAlign: 'right', maxWidth: 420 }}>
-            Pursuing Salesforce B2C Commerce Architect certification · Based in Gurgaon, India · Open to Solution Architect roles
+            Commerce architecture at scale · across platforms, teams, and markets · Gurgaon, India
           </p>
         </footer>
       </body>
