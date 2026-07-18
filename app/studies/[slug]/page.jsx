@@ -6,6 +6,11 @@ export function generateStaticParams() {
   return getAllStudies().map((s) => ({ slug: s.slug }));
 }
 
+export function generateMetadata({ params }) {
+  const { frontmatter } = getStudy(params.slug);
+  return { title: `${frontmatter.title} — Dev Mani Shukla`, description: frontmatter.summary };
+}
+
 export default function StudyPage({ params }) {
   const { frontmatter, content } = getStudy(params.slug);
   return (

@@ -92,6 +92,25 @@ article blockquote p:first-child {
 }
 article blockquote p:last-child { margin-bottom:0; }
 
+/* language switch */
+.lang {
+  margin-left:auto; font-family:'IBM Plex Mono', monospace; font-size:12px;
+  color:var(--muted); background:var(--surface-2);
+  border:1px solid var(--border); border-radius:999px; padding:7px 12px;
+}
+.lang:hover { border-color:var(--accent); color:var(--accent); }
+.nav .toggle { margin-left:0; }
+
+/* translation review notice */
+.notice {
+  background:var(--surface-2); border:1px solid var(--border);
+  border-left:3px solid var(--accent); border-radius:10px;
+  padding:14px 18px; margin:0 0 28px; font-size:14px; line-height:1.55;
+  color:var(--muted); max-width:72ch;
+}
+.notice strong { color:var(--text); }
+.notice a { color:var(--accent); text-decoration:underline; }
+
 /* TSD generator */
 .tsd { margin:24px 0 8px; }
 .tsd-form { display:grid; gap:14px; margin-bottom:22px; }
