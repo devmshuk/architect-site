@@ -14,7 +14,13 @@ draft: false
 
 *A self-directed design study grounded in real commerce order integration — the Salesforce Commerce Cloud (SFCC) order lifecycle and the middleware-mediated integrations around it. It works through a coupling problem, the options I weighed, and — the part that matters most — where I would refuse to apply the pattern. Not a client deliverable. The event-bus framing is the portable principle; in SFCC the concrete tools are checkout hooks, the Service Framework, jobs, and an API gateway / middleware layer.*
 
-**The one line:** *An order is one fact that many systems need. Publish it once and let each system consume it independently and asynchronously, instead of making checkout personally responsible for every consumer — but keep payment authorisation synchronous, because "probably paid" is not a thing.*
+> **Bottom line — for product & program stakeholders**
+>
+> **The decision** — Let checkout do one job — take a correct, paid order — and hand that order to every downstream system (fulfilment, CRM, tax, analytics) independently, rather than wiring each one into the checkout itself.
+>
+> **What it unlocks** — New downstream systems can be added without touching checkout, and a slow or failing partner system can no longer take down the buy button. The customer still gets a firm yes/no on payment before the confirmation page.
+>
+> **The risk it removes** — Checkout becoming the most fragile, most-changed system you own — where every new integration is a change to the one flow you least want to break during peak trading.
 
 ---
 
@@ -38,12 +44,20 @@ Publish the order as an **event** and let consumers take it on their own time:
 - Adding a new consumer is a new subscription to that event — **zero changes to checkout**.
 
 ```
-                 ┌─────────────┐
-   checkout ───▶ │ order event │ ──▶ order management / fulfilment (system of record)
-   (record +     │  (queued,   │ ──▶ tax
-    enqueue)     │ idempotent) │ ──▶ CRM
-                 └─────────────┘ ──▶ analytics
-                        (each consumes independently, asynchronously)
+  CUSTOMER-FACING · synchronous — the shopper is waiting
+  ────────────────────────────────────────────────────────────
+   shopper ─▶ checkout ─▶ authorise payment ─▶ ORDER PLACED
+                          (firm yes / no here)       │
+  ═══════════════════════════════════════════════════╪══════  ◀─ the risk boundary
+  DOWNSTREAM · asynchronous — seconds of lag is fine  ▼
+                                   ┌───────────────┐
+                                   │  order event  │ ─▶ order management / fulfilment
+                                   │   (queued,    │ ─▶ tax
+                                   │  idempotent)  │ ─▶ CRM
+                                   └───────────────┘ ─▶ analytics
+
+  Above the line, the customer waits — so it must be fast and give a
+  definite answer. Below the line, each system consumes on its own time.
 ```
 
 This inverts the dependency. Consumers now depend on the *event contract*, not on checkout's internals, and checkout depends on nobody downstream. The team that owns checkout stops being everyone's bottleneck. It also matches how the platform actually splits responsibility: **commerce captures the order; the order management system fulfils it and becomes the post-purchase system of record**, with status flowing back for the storefront to display. Checkout's job ends at "correct, paid order, announced."

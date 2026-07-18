@@ -80,6 +80,18 @@ code, pre { font-family:'IBM Plex Mono', monospace; }
 pre { background:var(--surface-2); border:1px solid var(--border); border-radius:10px; padding:16px; overflow:auto; margin:16px 0; font-size:13px; }
 article em { color:var(--muted); }
 
+/* study outcome callout — the skim layer for product/program stakeholders */
+article blockquote {
+  background:var(--surface-2); border-left:3px solid var(--accent);
+  border-radius:10px; padding:20px 24px; margin:24px 0;
+}
+article blockquote p { margin:10px 0; max-width:none; }
+article blockquote p:first-child {
+  margin-top:0; font-family:'IBM Plex Mono', monospace;
+  font-size:12px; letter-spacing:.05em; color:var(--accent);
+}
+article blockquote p:last-child { margin-bottom:0; }
+
 /* footer */
 .foot {
   max-width:1040px; margin:40px auto 0; padding:34px 28px 56px;

@@ -14,6 +14,14 @@ draft: false
 
 *A self-directed design study grounded in the layered commerce estate I work in daily — Salesforce Commerce Cloud (SFCC), across ~100 sites spanning many brands and markets. It works through a boundary-design problem I've lived from the inside, the options I weighed, and the reasoning behind where I'd draw the lines. Not a client deliverable — the judgment is the point. The concrete mechanism here is SFCC's cartridge model, but the principle carries across commerce platforms.*
 
+> **Bottom line — for product & program stakeholders**
+>
+> **The decision** — Build many brands and markets on one shared base, and let each brand or market change only what it genuinely needs, as thin configuration on top — never by editing the shared code.
+>
+> **What it unlocks** — A new brand or market launches as configuration, not a rebuild; a shared improvement reaches every storefront at once; and the platform can keep taking upgrades instead of freezing.
+>
+> **The risk it removes** — The estate quietly fragmenting into a hundred bespoke sites that can't share a fix or a feature — the slow drift that turns one platform into a hundred maintenance problems.
+
 **The one line:** *A multi-brand platform is a bet about where change happens. Draw the seam so that the things that rarely change and are shared sit on one side, and the things that vary per brand or market sit on the other — and a new brand becomes a configuration exercise instead of a fork.*
 
 ---

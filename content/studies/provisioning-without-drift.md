@@ -14,6 +14,14 @@ draft: false
 
 *A self-directed design study, generalised from real work: I proposed and designed a standardised, repeatable rollout pattern for a loyalty capability across a large Salesforce Commerce Cloud (SFCC) estate, which cut the effort to launch it on a new site from roughly eight weeks to about four days. This study takes the principle behind that — config as the source of truth, applied repeatably — and works through it as an architecture problem: the options I weighed and the trade-offs behind the call. Not a client deliverable, and no company's numbers. The mechanism is SFCC site configuration and replication; the principle carries across platforms.*
 
+> **Bottom line — for product & program stakeholders**
+>
+> **The decision** — Make one versioned configuration the single source of truth for each site, and apply it with a repeatable, self-correcting process — instead of standing up and hand-tuning every site.
+>
+> **What it unlocks** — New-site and new-capability launches drop from weeks to days, and delivery effort stops growing with the estate: the hundredth site is nearly free, so the team no longer scales with the market count.
+>
+> **The risk it removes** — Configuration drift across a ~100-site estate — the reason a fix can't be rolled out with confidence and every incident turns into a bespoke investigation. Same config, same site, every time.
+
 **The one line:** *An estate that is stood up by hand drifts apart; an estate that is stood up from declarative config, applied by a repeatable and idempotent process, converges. The second one launches new markets in days instead of weeks — and gets cheaper to run as it grows, not more expensive.*
 
 ---
