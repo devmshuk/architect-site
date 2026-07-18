@@ -43,11 +43,13 @@ For any given piece of behaviour, the question is: **does this vary by brand or 
 
 That single question decides which side of the seam it belongs on. In SFCC the layering is made concrete by the **cartridge path** — an ordered list of code layers, resolved most-specific first. A useful way to picture it, from most-shared to most-specific:
 
-```
-core / base   →  the shared contract + behaviour, owned centrally, changes rarely
-  brand       →  brand-level identity and rules
-  market      →  country / regulatory / commercial differences
-    site      →  the thin, genuinely site-specific tail
+```mermaid
+flowchart TB
+    CORE["core / base — shared contract and behaviour, owned centrally, changes rarely"]
+    BRAND["brand — brand-level identity and rules"]
+    MARKET["market — country / regulatory / commercial differences"]
+    SITE["site — the thin, genuinely site-specific tail"]
+    CORE --> BRAND --> MARKET --> SITE
 ```
 
 The estate I work in layers this even more finely — a **global → zone → brand → country → site** cartridge model — but the principle is the same at any depth. Behaviour resolves by *first match wins*: a site *is* the shared base, unless a brand layer overrides it, unless a market layer overrides that, unless the site itself does. Most of any given site is the top-shared layer. The lower you go, the less should live there.

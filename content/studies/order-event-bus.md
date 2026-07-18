@@ -43,22 +43,29 @@ Publish the order as an **event** and let consumers take it on their own time:
 - The event is **enqueued and delivered reliably** to each consumer — order management (SOM) for fulfilment, CRM, tax, analytics — via the Service Framework and a queued, idempotent flow, commonly through an API gateway / middleware layer rather than point-to-point from the storefront.
 - Adding a new consumer is a new subscription to that event — **zero changes to checkout**.
 
-```
-  CUSTOMER-FACING · synchronous — the shopper is waiting
-  ────────────────────────────────────────────────────────────
-   shopper ─▶ checkout ─▶ authorise payment ─▶ ORDER PLACED
-                          (firm yes / no here)       │
-  ═══════════════════════════════════════════════════╪══════  ◀─ the risk boundary
-  DOWNSTREAM · asynchronous — seconds of lag is fine  ▼
-                                   ┌───────────────┐
-                                   │  order event  │ ─▶ order management / fulfilment
-                                   │   (queued,    │ ─▶ tax
-                                   │  idempotent)  │ ─▶ CRM
-                                   └───────────────┘ ─▶ analytics
+```mermaid
+sequenceDiagram
+    participant S as Shopper
+    participant C as Checkout
+    participant P as Payment
+    participant Q as Order event (queue)
+    participant D as Downstream systems
 
-  Above the line, the customer waits — so it must be fast and give a
-  definite answer. Below the line, each system consumes on its own time.
+    Note over S,P: Synchronous — the shopper is waiting
+    S->>C: Place order
+    C->>P: Authorise payment
+    P-->>C: Firm answer (approved / declined)
+    C-->>S: Order confirmed
+
+    Note over Q,D: Asynchronous — seconds of lag is fine
+    C-)Q: Publish order event
+    Q-)D: Fulfilment / OMS
+    Q-)D: CRM
+    Q-)D: Tax
+    Q-)D: Analytics
 ```
+
+Above the line the customer is waiting, so it must be fast and give a definite answer. Below the line each system consumes the order on its own time — and a new consumer is just one more subscriber, with no change to checkout.
 
 This inverts the dependency. Consumers now depend on the *event contract*, not on checkout's internals, and checkout depends on nobody downstream. The team that owns checkout stops being everyone's bottleneck. It also matches how the platform actually splits responsibility: **commerce captures the order; the order management system fulfils it and becomes the post-purchase system of record**, with status flowing back for the storefront to display. Checkout's job ends at "correct, paid order, announced."
 

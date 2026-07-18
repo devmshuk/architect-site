@@ -57,6 +57,15 @@ Four moving parts:
 3. **Layered storefront template** — a shared base, with overrides resolved in a predictable order (global → brand → market → site). Most of a site *is* the base; the spec only captures where it legitimately differs.
 4. **Verification gate** — after applying, the live site is checked back against its spec. If they disagree, that is drift, and it is surfaced immediately rather than discovered during an outage.
 
+```mermaid
+flowchart LR
+    CFG["Config — versioned source of truth"] --> APPLY["Apply — repeatable, idempotent"]
+    APPLY --> SITE["Live site"]
+    SITE -.->|verify| CHECK{"Matches config?"}
+    CHECK -.->|drift found| APPLY
+    CHECK -.->|in sync| OK["Converged"]
+```
+
 The property that makes all of this work is **idempotency**. A non-idempotent script *does* things ("create X, set Y"); re-running it double-applies or fails. An idempotent apply *asserts* things ("X exists and looks like this; make it so"); re-running it simply re-confirms the site is already correct, or quietly corrects it if something has drifted. That single property is what turns provisioning from a risky one-shot event into a safe, repeatable reconciliation you can run any time.
 
 ## Trade-offs considered

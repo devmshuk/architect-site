@@ -1,5 +1,4 @@
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';           // enables Markdown tables
+import StudyMarkdown from '../../../components/StudyMarkdown';
 import { getAllStudies, getStudy } from '../../../lib/studies';
 
 // Tells Next which study pages to pre-build (one per Markdown file).
@@ -14,7 +13,7 @@ export default function StudyPage({ params }) {
       <p><a href="/studies" style={{ fontSize: 13, color: 'var(--muted)' }}>&larr; All studies</a></p>
       <p className="eyebrow" style={{ marginTop: 24 }}>ARCHITECTURE STUDY · {frontmatter.theme}</p>
       <h1>{frontmatter.title}</h1>
-      <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
+      <StudyMarkdown content={content} />
     </article>
   );
 }

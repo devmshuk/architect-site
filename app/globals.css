@@ -92,6 +92,13 @@ article blockquote p:first-child {
 }
 article blockquote p:last-child { margin-bottom:0; }
 
+/* rendered mermaid diagrams */
+.mermaid-wrap {
+  margin:26px 0; padding:22px; text-align:center; overflow-x:auto;
+  background:var(--surface); border:1px solid var(--border); border-radius:12px;
+}
+.mermaid-wrap svg { max-width:100%; height:auto; }
+
 /* footer */
 .foot {
   max-width:1040px; margin:40px auto 0; padding:34px 28px 56px;
