@@ -92,6 +92,31 @@ article blockquote p:first-child {
 }
 article blockquote p:last-child { margin-bottom:0; }
 
+/* TSD generator */
+.tsd { margin:24px 0 8px; }
+.tsd-form { display:grid; gap:14px; margin-bottom:22px; }
+.tsd-form label { display:grid; gap:6px; }
+.tsd-form label > span { font-size:13px; color:var(--muted); }
+.tsd-form label > span em { font-style:normal; opacity:.75; }
+.tsd-form input, .tsd-form textarea {
+  font-family:'IBM Plex Sans', system-ui, sans-serif; font-size:15px;
+  color:var(--text); background:var(--surface);
+  border:1px solid var(--border); border-radius:10px; padding:11px 13px;
+  width:100%; resize:vertical;
+}
+.tsd-form input:focus, .tsd-form textarea:focus { outline:none; border-color:var(--accent); }
+.tsd-head { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:8px; }
+.tsd-head button {
+  font-family:'IBM Plex Mono', monospace; font-size:12px; cursor:pointer;
+  color:var(--muted); background:var(--surface-2);
+  border:1px solid var(--border); border-radius:999px; padding:7px 14px;
+}
+.tsd-head button:hover { border-color:var(--accent); color:var(--accent); }
+.tsd-out {
+  max-height:420px; overflow:auto; white-space:pre-wrap; word-break:break-word;
+  font-size:12.5px; line-height:1.6;
+}
+
 /* rendered mermaid diagrams */
 .mermaid-wrap {
   margin:26px 0; padding:22px; text-align:center; overflow-x:auto;
