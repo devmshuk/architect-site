@@ -44,15 +44,15 @@ const patterns = [
 ];
 
 const adrs = [
-  ['ADR-016', '2026 · 07', 'Ne pas modifier le code partagé ni celui des éditeurs',
+  ['ADR-01', 'Ne pas modifier le code partagé ni celui des éditeurs',
     'Ne jamais modifier la base de la plateforme ni le code fourni par un éditeur. Changez le comportement depuis votre propre couche au-dessus. Cela demande de la discipline et permet de continuer à recevoir les mises à jour, avec des correctifs à faire une seule fois.'],
-  ['ADR-014', '2026 · 05', 'Vitrine découplée plutôt qu’intégrée',
+  ['ADR-02', 'Vitrine découplée plutôt qu’intégrée',
     'Séparer l’interface client du back-end commerce. Accepte une construction initiale plus lourde et un niveau de compétence plus élevé, en échange de plus de souplesse côté interface et de frontières plus nettes entre équipes.'],
-  ['ADR-011', '2026 · 03', 'Traiter les événements de commande après le paiement',
+  ['ADR-03', 'Traiter les événements de commande après le paiement',
     'Enregistrer la commande et la livrer aux autres systèmes avec des tentatives répétées, au lieu de les appeler pendant le tunnel de commande. Accepte un léger délai en aval, la décision de paiement restant dans le tunnel.'],
-  ['ADR-009', '2026 · 01', 'Des contrats d’API plutôt qu’une base de données partagée',
+  ['ADR-04', 'Des contrats d’API plutôt qu’une base de données partagée',
     'Refus de laisser les systèmes lire la base de données des autres, au profit d’interfaces claires et versionnées. Accepte plus de travail de conception en amont pour éviter une dépendance cachée qui figerait les deux côtés.'],
-  ['ADR-006', '2025 · 11', 'Un catalogue produit partagé, des catalogues de vitrine distincts',
+  ['ADR-05', 'Un catalogue produit partagé, des catalogues de vitrine distincts',
     'Les fiches produit existent une seule fois et sont partagées. Chaque site pilote son menu, sa sélection et sa liste de prix. Accepte plus de paramétrage pour obtenir une source de vérité produit unique avec un contrôle local du merchandising et des prix.'],
 ];
 
@@ -97,9 +97,9 @@ export default function LibraryFr() {
 
       <h2>Registre des décisions</h2>
       <p className="muted" style={{ marginTop: 0 }}>Un registre de décision est une note courte : ce qui a été décidé, et ce qui a été abandonné. Ces décisions viennent des études de conception ; elles consignent un raisonnement, pas des projets clients.</p>
-      {adrs.map(([id, date, title, decision]) => (
+      {adrs.map(([id, title, decision]) => (
         <div className="row" key={id}>
-          <div className="period">{id}<br /><span className="muted" style={{ fontSize: 12 }}>{date}</span></div>
+          <div className="period">{id}</div>
           <div>
             <strong>{title}</strong>
             <p className="muted" style={{ marginTop: 6 }}>{decision}</p>

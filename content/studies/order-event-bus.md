@@ -8,7 +8,7 @@ summary: "Connecting every downstream system directly into checkout makes checko
           step that must still happen while the shopper waits."
 date: 2026-07-18
 depth: deep
-adrRefs: ["ADR-011"]
+adrRefs: ["ADR-03"]
 draft: false
 ---
 
@@ -114,4 +114,4 @@ That single distinction — what the shopper is waiting for, versus what merely 
 
 ---
 
-**Related decision:** ADR-011 (handle order events after checkout, not during it) records this in short form, including the explicit exception that keeps the payment decision inside checkout.
+**Related decision:** ADR-03 (handle order events after checkout, not during it) records this in short form, including the explicit exception that keeps the payment decision inside checkout.

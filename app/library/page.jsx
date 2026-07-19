@@ -43,15 +43,15 @@ const patterns = [
 ];
 
 const adrs = [
-  ['ADR-016', '2026 · 07', 'Keep shared and vendor code untouched',
+  ['ADR-01', 'Keep shared and vendor code untouched',
     'Never edit the platform base or vendor-supplied code. Change behaviour from your own layer above it. This costs discipline and buys an estate that can keep taking updates, and fixes that only have to be made once.'],
-  ['ADR-014', '2026 · 05', 'Headless storefront over a combined one',
+  ['ADR-02', 'Headless storefront over a combined one',
     'Separate the shopper-facing front end from the commerce back end. Accepts a larger initial build and a higher skills requirement, in exchange for front-end flexibility and clearer boundaries between teams.'],
-  ['ADR-011', '2026 · 03', 'Handle order events after checkout',
+  ['ADR-03', 'Handle order events after checkout',
     'Record the order and deliver it to other systems with retries, instead of calling each one during checkout. Accepts a short delay downstream, with the payment decision kept inside checkout.'],
-  ['ADR-009', '2026 · 01', 'Use API contracts instead of a shared database',
+  ['ADR-04', 'Use API contracts instead of a shared database',
     'Rejected letting systems read each other’s database in favour of clear, versioned interfaces. Accepts more design work up front to avoid a hidden dependency that would freeze both sides.'],
-  ['ADR-006', '2025 · 11', 'One shared product catalog, separate storefront catalogs',
+  ['ADR-05', 'One shared product catalog, separate storefront catalogs',
     'Product records live once and are shared. Each site controls its own menu, selection and price list. Accepts more setup to get one source of product truth with local control of merchandising and pricing.'],
 ];
 
@@ -95,9 +95,9 @@ export default function Library() {
 
       <h2>Decision records</h2>
       <p className="muted" style={{ marginTop: 0 }}>A decision record is a short note of a choice: what was decided, and what was given up. These come from the design studies, so they record reasoning rather than client projects.</p>
-      {adrs.map(([id, date, title, decision]) => (
+      {adrs.map(([id, title, decision]) => (
         <div className="row" key={id}>
-          <div className="period">{id}<br /><span className="muted" style={{ fontSize: 12 }}>{date}</span></div>
+          <div className="period">{id}</div>
           <div>
             <strong>{title}</strong>
             <p className="muted" style={{ marginTop: 6 }}>{decision}</p>

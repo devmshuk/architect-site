@@ -9,7 +9,7 @@ summary: "Une plateforme unique au service de plusieurs marques et marchés dép
           de marché, en configuration plutôt qu'en copies."
 date: 2026-07-18
 depth: deep
-adrRefs: ["ADR-009", "ADR-011"]
+adrRefs: ["ADR-04", "ADR-03"]
 draft: false
 ---
 
@@ -108,4 +108,4 @@ Le mécanisme n'est pas le point intéressant. Le point intéressant est l'endro
 
 ---
 
-**Décisions liées :** ADR-009 (utiliser des contrats d'API versionnés plutôt qu'une base de données partagée) applique la même idée à l'intégration des systèmes : refuser la dépendance cachée et payer le coût d'une interface claire. ADR-011 (traiter les événements de commande après le paiement) trace une autre frontière, cette fois dans le temps plutôt que dans la structure.
+**Décisions liées :** ADR-04 (utiliser des contrats d'API versionnés plutôt qu'une base de données partagée) applique la même idée à l'intégration des systèmes : refuser la dépendance cachée et payer le coût d'une interface claire. ADR-03 (traiter les événements de commande après le paiement) trace une autre frontière, cette fois dans le temps plutôt que dans la structure.

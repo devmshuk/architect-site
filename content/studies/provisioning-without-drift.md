@@ -8,7 +8,7 @@ summary: "When sites are set up by hand, no two end up the same. Making the
           the differences at the source."
 date: 2026-07-18
 depth: deep
-adrRefs: ["ADR-011", "ADR-014"]
+adrRefs: ["ADR-03", "ADR-02"]
 draft: false
 ---
 
@@ -99,4 +99,4 @@ None of this comes from a clever tool. It comes from one decision — make the c
 
 ---
 
-**Related decisions:** ADR-011 (handle order events after checkout) and ADR-014 (headless storefront over a combined one) sit alongside this. Different problems, same instinct: make the boundaries visible, and prefer designs a team can reason about under pressure.
+**Related decisions:** ADR-03 (handle order events after checkout) and ADR-02 (headless storefront over a combined one) sit alongside this. Different problems, same instinct: make the boundaries visible, and prefer designs a team can reason about under pressure.

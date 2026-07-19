@@ -8,7 +8,7 @@ summary: "Quand les sites sont configurés à la main, aucun ne finit identique 
           plusieurs semaines à quelques jours et supprime les écarts à la source."
 date: 2026-07-18
 depth: deep
-adrRefs: ["ADR-011", "ADR-014"]
+adrRefs: ["ADR-03", "ADR-02"]
 draft: false
 ---
 
@@ -99,4 +99,4 @@ Rien de tout cela ne vient d'un outil astucieux. Cela vient d'une seule décisio
 
 ---
 
-**Décisions liées :** ADR-011 (traiter les événements de commande après le paiement) et ADR-014 (vitrine découplée plutôt qu'intégrée) accompagnent celle-ci. Problèmes différents, même réflexe : rendre les frontières visibles, et préférer des conceptions qu'une équipe peut comprendre sous pression.
+**Décisions liées :** ADR-03 (traiter les événements de commande après le paiement) et ADR-02 (vitrine découplée plutôt qu'intégrée) accompagnent celle-ci. Problèmes différents, même réflexe : rendre les frontières visibles, et préférer des conceptions qu'une équipe peut comprendre sous pression.

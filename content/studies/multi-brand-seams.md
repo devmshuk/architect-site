@@ -8,7 +8,7 @@ summary: "One platform serving many brands and markets depends on where you draw
           differences on the other, written as configuration and not as copies."
 date: 2026-07-18
 depth: deep
-adrRefs: ["ADR-009", "ADR-011"]
+adrRefs: ["ADR-04", "ADR-03"]
 draft: false
 ---
 
@@ -107,4 +107,4 @@ The mechanism is not the interesting part. The interesting part is where you put
 
 ---
 
-**Related decisions:** ADR-009 (use versioned API contracts instead of sharing a database) applies the same idea to system integration: refuse the hidden dependency and pay the cost of a clear interface. ADR-011 (handle order events after checkout, not during it) draws another boundary, this time in time rather than in structure.
+**Related decisions:** ADR-04 (use versioned API contracts instead of sharing a database) applies the same idea to system integration: refuse the hidden dependency and pay the cost of a clear interface. ADR-03 (handle order events after checkout, not during it) draws another boundary, this time in time rather than in structure.

@@ -8,7 +8,7 @@ summary: "Brancher tous les systèmes en aval directement dans le tunnel de comm
           sur la seule étape qui doit encore se faire pendant que le client attend."
 date: 2026-07-18
 depth: deep
-adrRefs: ["ADR-011"]
+adrRefs: ["ADR-03"]
 draft: false
 ---
 
@@ -114,4 +114,4 @@ Cette seule distinction — ce que le client attend, par opposition à ce qui do
 
 ---
 
-**Décision liée :** ADR-011 (traiter les événements de commande après le paiement) consigne ce choix en bref, y compris l'exception explicite qui garde la décision de paiement dans le tunnel de commande.
+**Décision liée :** ADR-03 (traiter les événements de commande après le paiement) consigne ce choix en bref, y compris l'exception explicite qui garde la décision de paiement dans le tunnel de commande.
