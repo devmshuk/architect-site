@@ -9,9 +9,8 @@ export const metadata = pageMeta({
 
 const channels = [
   ['EMAIL', 'devmanis.757@gmail.com', 'mailto:devmanis.757@gmail.com'],
-  ['LINKEDIN', 'linkedin.com/in/dev-mani-shukla', 'https://www.linkedin.com/in/dev-mani-shukla'],
+  ['LINKEDIN', 'linkedin.com/in/dev-mani-shukla-5a1a9714a', 'https://www.linkedin.com/in/dev-mani-shukla-5a1a9714a/'],
   ['PHONE', '+91 98992 10128', 'tel:+919899210128'],
-  ['LOCATION', 'Gurgaon, India · remote-friendly', null],
 ];
 
 export default function Contact() {
