@@ -1,4 +1,11 @@
-export const metadata = { title: 'About — Dev Mani Shukla' };
+import { pageMeta } from '../../lib/seo';
+
+export const metadata = pageMeta({
+  title: 'About — Dev Mani Shukla',
+  description: 'How I think about designing commerce platforms that stay simple as they grow.',
+  path: '/about',
+  locale: 'en',
+});
 
 export default function About() {
   return (

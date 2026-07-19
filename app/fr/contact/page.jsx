@@ -1,6 +1,12 @@
 import TranslationNotice from '../../../components/TranslationNotice';
 
-export const metadata = { title: 'Contact — Dev Mani Shukla' };
+import { pageMeta } from '../../../lib/seo';
+export const metadata = pageMeta({
+  title: 'Contact — Dev Mani Shukla',
+  description: 'Me contacter au sujet d’une décision de conception ou de l’évolution d’une plateforme de commerce.',
+  path: '/contact',
+  locale: 'fr',
+});
 
 const channels = [
   ['E-MAIL', 'devmanis.757@gmail.com', 'mailto:devmanis.757@gmail.com'],

@@ -1,10 +1,13 @@
 import TranslationNotice from '../../components/TranslationNotice';
+import { pageMeta } from '../../lib/seo';
 
-export const metadata = {
+export const metadata = pageMeta({
   title: 'Dev Mani Shukla — Architecture commerce à grande échelle',
   description:
     'Notes de conception sur les plateformes de commerce qui restent simples en grandissant : où placer les frontières, ce que chaque choix apporte et ce qu’il coûte.',
-};
+  path: '/',
+  locale: 'fr',
+});
 
 const sections = [
   ['Études', 'Études de conception détaillées. Chacune traite un problème réel, les options et les compromis.', '/fr/studies'],

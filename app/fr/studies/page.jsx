@@ -1,7 +1,13 @@
 import { getAllStudies } from '../../../lib/studies';
 import TranslationNotice from '../../../components/TranslationNotice';
 
-export const metadata = { title: 'Études — Dev Mani Shukla' };
+import { pageMeta } from '../../../lib/seo';
+export const metadata = pageMeta({
+  title: 'Études — Dev Mani Shukla',
+  description: 'Études de conception sur le commerce à grande échelle : un problème, les options, et le raisonnement derrière le choix.',
+  path: '/studies',
+  locale: 'fr',
+});
 
 export default function StudiesIndexFr() {
   const studies = getAllStudies('fr');

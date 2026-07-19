@@ -1,4 +1,11 @@
-export const metadata = { title: 'AI for Architects — Dev Mani Shukla' };
+import { pageMeta } from '../../lib/seo';
+
+export const metadata = pageMeta({
+  title: 'AI for Architects — Dev Mani Shukla',
+  description: 'Using AI to make architecture writing consistent, without handing over the judgment.',
+  path: '/ai',
+  locale: 'en',
+});
 
 export default function AI() {
   return (

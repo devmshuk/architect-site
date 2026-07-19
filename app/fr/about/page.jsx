@@ -1,6 +1,12 @@
 import TranslationNotice from '../../../components/TranslationNotice';
 
-export const metadata = { title: 'À propos — Dev Mani Shukla' };
+import { pageMeta } from '../../../lib/seo';
+export const metadata = pageMeta({
+  title: 'À propos — Dev Mani Shukla',
+  description: 'Ma façon d’aborder la conception de plateformes de commerce qui restent simples en grandissant.',
+  path: '/about',
+  locale: 'fr',
+});
 
 export default function AboutFr() {
   return (

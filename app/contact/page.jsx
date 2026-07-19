@@ -1,4 +1,11 @@
-export const metadata = { title: 'Contact — Dev Mani Shukla' };
+import { pageMeta } from '../../lib/seo';
+
+export const metadata = pageMeta({
+  title: 'Contact — Dev Mani Shukla',
+  description: 'Get in touch about a design decision or how a commerce platform should grow.',
+  path: '/contact',
+  locale: 'en',
+});
 
 const channels = [
   ['EMAIL', 'devmanis.757@gmail.com', 'mailto:devmanis.757@gmail.com'],

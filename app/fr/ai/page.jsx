@@ -1,6 +1,12 @@
 import TranslationNotice from '../../../components/TranslationNotice';
 
-export const metadata = { title: 'IA pour architectes — Dev Mani Shukla' };
+import { pageMeta } from '../../../lib/seo';
+export const metadata = pageMeta({
+  title: 'IA pour architectes — Dev Mani Shukla',
+  description: 'Utiliser l’IA pour rendre les documents d’architecture cohérents, sans lui céder le jugement.',
+  path: '/ai',
+  locale: 'fr',
+});
 
 export default function AIFr() {
   return (

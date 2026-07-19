@@ -47,18 +47,15 @@ That question decides which side of the boundary it belongs on.
 
 In Commerce Cloud this is made concrete by the **cartridge path**. A *cartridge* is a folder of code. The *cartridge path* is an ordered list of those folders for one site. When the platform needs a file, it walks the list in order and uses the first match it finds. So a folder earlier in the list can replace a file from a folder later in the list. This is called an **override**: you change behaviour without editing the original file.
 
-Here are the layers, from most shared at the top to most specific at the bottom.
+Here are the layers. The shared base is the widest because most behaviour lives there. Each layer above it should hold less.
 
-```mermaid
-flowchart TB
-    CORE["core / base — shared, changes rarely"]
-    BRAND["brand — identity and rules"]
-    MARKET["market — country and commercial"]
-    SITE["site — the thin, specific tail"]
-    CORE --> BRAND --> MARKET --> SITE
+```svg
+layer-pyramid
 ```
 
-The estate I work on has more layers than this — global, zone, brand, country, then site — but the idea is the same at any depth. A site *is* the shared base, unless a brand layer changes something, unless a market layer changes that, unless the site itself does. Most of any site comes from the top layer. The lower you go, the less should live there.
+*The width of each tier is the point: the shared base carries most of the behaviour, and each layer above it holds only what genuinely differs.*
+
+The estate I work on has more layers than this — global, zone, brand, country, then site — but the idea is the same at any depth. A site *is* the shared base, unless a brand layer changes something, unless a market layer changes that, unless the site itself does. Most of any site comes from the shared base. The higher up you go, the less should live there.
 
 ## The design: share the base, override it, never edit it
 

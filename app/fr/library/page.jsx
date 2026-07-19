@@ -1,6 +1,12 @@
 import TranslationNotice from '../../../components/TranslationNotice';
 
-export const metadata = { title: 'Bibliothèque — Dev Mani Shukla' };
+import { pageMeta } from '../../../lib/seo';
+export const metadata = pageMeta({
+  title: 'Bibliothèque — Dev Mani Shukla',
+  description: 'Modèles de conception pour le commerce à grande échelle : ce que chacun résout, quand l’utiliser et quand l’éviter.',
+  path: '/library',
+  locale: 'fr',
+});
 
 const patterns = [
   ['P-01', 'intégration', 'Traiter les événements de commande après le paiement',
@@ -50,6 +56,14 @@ const adrs = [
     'Les fiches produit existent une seule fois et sont partagées. Chaque site pilote son menu, sa sélection et sa liste de prix. Accepte plus de paramétrage pour obtenir une source de vérité produit unique avec un contrôle local du merchandising et des prix.'],
 ];
 
+// Les catégories sont ordonnées volontairement, et non par nombre de fiches.
+const CATEGORIES = [
+  ['intégration', 'Intégration', 'Comment les systèmes communiquent, et ce qui se passe quand l’un d’eux tombe.'],
+  ['plateforme', 'Plateforme', 'Comment une seule plateforme sert plusieurs marques et marchés sans se fragmenter.'],
+  ['performance', 'Performance', 'Servir beaucoup de clients à la fois sans recalculer chaque fois la même réponse.'],
+  ['gouvernance', 'Gouvernance', 'Garder un grand parc cohérent au fur et à mesure qu’il grandit.'],
+];
+
 export default function LibraryFr() {
   return (
     <section>
@@ -59,17 +73,27 @@ export default function LibraryFr() {
       <p className="sub">Des fiches courtes. Chacune indique le problème résolu, quand l’utiliser et — tout aussi important — quand ne pas l’utiliser.</p>
       <p className="muted">Un modèle de conception est une solution qui a déjà fonctionné dans une situation connue. Aucun n’est toujours juste. La valeur est dans les conditions, donc chaque fiche les énonce clairement.</p>
 
-      <div className="grid" style={{ marginTop: 24 }}>
-        {patterns.map(([no, kind, name, problem, useWhen, avoidWhen]) => (
-          <div className="card" key={no}>
-            <span className="tag">{no} · {kind}</span>
-            <h3 style={{ margin: '8px 0' }}>{name}</h3>
-            <p className="muted" style={{ marginTop: 0 }}>{problem}</p>
-            <p style={{ margin: '10px 0 2px', fontSize: 13 }}><strong>À utiliser quand</strong> — <span className="muted">{useWhen}</span></p>
-            <p style={{ margin: '2px 0', fontSize: 13 }}><strong>À éviter quand</strong> — <span className="muted">{avoidWhen}</span></p>
+      {CATEGORIES.map(([key, heading, blurb]) => {
+        const group = patterns.filter((p) => p[1] === key);
+        if (!group.length) return null;
+        return (
+          <div key={key}>
+            <h2>{heading}</h2>
+            <p className="muted" style={{ marginTop: 0 }}>{blurb}</p>
+            <div className="grid" style={{ marginTop: 18 }}>
+              {group.map(([no, kind, name, problem, useWhen, avoidWhen]) => (
+                <div className="card" key={no}>
+                  <span className="tag">{no} · {kind}</span>
+                  <h3 style={{ margin: '8px 0' }}>{name}</h3>
+                  <p className="muted" style={{ marginTop: 0 }}>{problem}</p>
+                  <p style={{ margin: '10px 0 2px', fontSize: 13 }}><strong>À utiliser quand</strong> — <span className="muted">{useWhen}</span></p>
+                  <p style={{ margin: '2px 0', fontSize: 13 }}><strong>À éviter quand</strong> — <span className="muted">{avoidWhen}</span></p>
+                </div>
+              ))}
+            </div>
           </div>
-        ))}
-      </div>
+        );
+      })}
 
       <h2>Registre des décisions</h2>
       <p className="muted" style={{ marginTop: 0 }}>Un registre de décision est une note courte : ce qui a été décidé, et ce qui a été abandonné. Ces décisions viennent des études de conception ; elles consignent un raisonnement, pas des projets clients.</p>

@@ -1,4 +1,11 @@
-export const metadata = { title: 'Library — Dev Mani Shukla' };
+import { pageMeta } from '../../lib/seo';
+
+export const metadata = pageMeta({
+  title: 'Library — Dev Mani Shukla',
+  description: 'Patterns for commerce at scale: what each one solves, when to use it, and when not to.',
+  path: '/library',
+  locale: 'en',
+});
 
 const patterns = [
   ['P-01', 'integration', 'Handle order events after checkout',
@@ -48,6 +55,14 @@ const adrs = [
     'Product records live once and are shared. Each site controls its own menu, selection and price list. Accepts more setup to get one source of product truth with local control of merchandising and pricing.'],
 ];
 
+// Order the categories deliberately, rather than by how many entries each has.
+const CATEGORIES = [
+  ['integration', 'Integration', 'How systems talk to each other, and what happens when one of them fails.'],
+  ['platform', 'Platform', 'How one platform serves many brands and markets without splitting apart.'],
+  ['performance', 'Performance', 'Serving many shoppers at once without recomputing the same answer every time.'],
+  ['governance', 'Governance', 'Keeping a large estate consistent as it grows.'],
+];
+
 export default function Library() {
   return (
     <section>
@@ -56,17 +71,27 @@ export default function Library() {
       <p className="sub">Short entries. Each one says what problem it solves, when to use it, and — just as important — when not to.</p>
       <p className="muted">A pattern is a design that has worked before in a known situation. None of them are always right. The value is in the conditions, so each entry states them plainly.</p>
 
-      <div className="grid" style={{ marginTop: 24 }}>
-        {patterns.map(([no, kind, name, problem, useWhen, avoidWhen]) => (
-          <div className="card" key={no}>
-            <span className="tag">{no} · {kind}</span>
-            <h3 style={{ margin: '8px 0' }}>{name}</h3>
-            <p className="muted" style={{ marginTop: 0 }}>{problem}</p>
-            <p style={{ margin: '10px 0 2px', fontSize: 13 }}><strong>Use when</strong> — <span className="muted">{useWhen}</span></p>
-            <p style={{ margin: '2px 0', fontSize: 13 }}><strong>Avoid when</strong> — <span className="muted">{avoidWhen}</span></p>
+      {CATEGORIES.map(([key, heading, blurb]) => {
+        const group = patterns.filter((p) => p[1] === key);
+        if (!group.length) return null;
+        return (
+          <div key={key}>
+            <h2>{heading}</h2>
+            <p className="muted" style={{ marginTop: 0 }}>{blurb}</p>
+            <div className="grid" style={{ marginTop: 18 }}>
+              {group.map(([no, kind, name, problem, useWhen, avoidWhen]) => (
+                <div className="card" key={no}>
+                  <span className="tag">{no} · {kind}</span>
+                  <h3 style={{ margin: '8px 0' }}>{name}</h3>
+                  <p className="muted" style={{ marginTop: 0 }}>{problem}</p>
+                  <p style={{ margin: '10px 0 2px', fontSize: 13 }}><strong>Use when</strong> — <span className="muted">{useWhen}</span></p>
+                  <p style={{ margin: '2px 0', fontSize: 13 }}><strong>Avoid when</strong> — <span className="muted">{avoidWhen}</span></p>
+                </div>
+              ))}
+            </div>
           </div>
-        ))}
-      </div>
+        );
+      })}
 
       <h2>Decision records</h2>
       <p className="muted" style={{ marginTop: 0 }}>A decision record is a short note of a choice: what was decided, and what was given up. These come from the design studies, so they record reasoning rather than client projects.</p>

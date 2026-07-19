@@ -111,6 +111,13 @@ article blockquote p:last-child { margin-bottom:0; }
 .notice strong { color:var(--text); }
 .notice a { color:var(--accent); text-decoration:underline; }
 
+/* inlined hand-drawn SVG figures (theme-aware via CSS variables) */
+.figure {
+  margin:26px 0; padding:20px; overflow-x:auto;
+  background:var(--surface); border:1px solid var(--border); border-radius:12px;
+}
+.figure svg { display:block; width:100%; height:auto; max-width:820px; margin:0 auto; }
+
 /* rendered mermaid diagrams */
 .mermaid-wrap {
   margin:26px 0; padding:22px; text-align:center; overflow-x:auto;

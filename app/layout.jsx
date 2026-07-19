@@ -1,10 +1,15 @@
 import './globals.css';
 import { SiteNav, SiteFooter } from '../components/SiteChrome';
+import { pageMeta, SITE_URL } from '../lib/seo';
+
+const TITLE = 'Dev Mani Shukla — Commerce Architecture at Scale';
+const DESCRIPTION =
+  'Design notes on commerce platforms that stay simple as they grow: where to place the boundaries, what each choice buys, and what it costs.';
 
 export const metadata = {
-  title: 'Dev Mani Shukla — Commerce Architecture at Scale',
-  description:
-    'Design notes on commerce platforms that stay simple as they grow: where to place the boundaries, what each choice buys, and what it costs.',
+  // Makes the relative /og.png resolve to an absolute URL, which link previews require.
+  metadataBase: new URL(SITE_URL),
+  ...pageMeta({ title: TITLE, description: DESCRIPTION, path: '/' }),
 };
 
 export default function RootLayout({ children }) {

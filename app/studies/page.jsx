@@ -1,6 +1,12 @@
 import { getAllStudies } from '../../lib/studies';
 
-export const metadata = { title: 'Studies — Dev Mani Shukla' };
+import { pageMeta } from '../../lib/seo';
+export const metadata = pageMeta({
+  title: 'Studies — Dev Mani Shukla',
+  description: 'Design studies in commerce at scale: one problem each, the options, and the reasoning behind the choice.',
+  path: '/studies',
+  locale: 'en',
+});
 
 export default function StudiesIndex() {
   const studies = getAllStudies();

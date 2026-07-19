@@ -48,18 +48,15 @@ Cette question décide de quel côté de la frontière il appartient.
 
 Dans Commerce Cloud, cela prend la forme du **chemin de cartouches**. Une *cartouche* est un dossier de code. Le *chemin de cartouches* est une liste ordonnée de ces dossiers pour un site. Quand la plateforme a besoin d'un fichier, elle parcourt la liste dans l'ordre et utilise la première correspondance trouvée. Un dossier placé plus tôt peut donc remplacer un fichier d'un dossier placé plus tard. C'est ce qu'on appelle une **surcharge** : vous changez le comportement sans modifier le fichier d'origine.
 
-Voici les couches, de la plus partagée en haut à la plus spécifique en bas.
+Voici les couches. La base partagée est la plus large, car c'est là que vit l'essentiel du comportement. Chaque couche au-dessus devrait en contenir moins.
 
-```mermaid
-flowchart TB
-    CORE["socle / base — partagé, change rarement"]
-    BRAND["marque — identité et règles"]
-    MARKET["marché — pays et commercial"]
-    SITE["site — la part fine et spécifique"]
-    CORE --> BRAND --> MARKET --> SITE
+```svg
+layer-pyramid-fr
 ```
 
-Le parc sur lequel je travaille comporte plus de couches que cela — global, zone, marque, pays, puis site — mais l'idée reste la même quelle que soit la profondeur. Un site *est* la base partagée, sauf si une couche marque change quelque chose, sauf si une couche marché change cela, sauf si le site lui-même le fait. L'essentiel d'un site vient de la couche du haut. Plus on descend, moins il devrait y avoir de choses.
+*La largeur de chaque niveau est l'essentiel : la base partagée porte la plus grande part du comportement, et chaque couche au-dessus ne contient que ce qui diffère réellement.*
+
+Le parc sur lequel je travaille comporte plus de couches que cela — global, zone, marque, pays, puis site — mais l'idée reste la même quelle que soit la profondeur. Un site *est* la base partagée, sauf si une couche marque change quelque chose, sauf si une couche marché change cela, sauf si le site lui-même le fait. L'essentiel d'un site vient de la base partagée. Plus on monte, moins il devrait y avoir de choses.
 
 ## La conception : partager la base, la surcharger, ne jamais la modifier
 
