@@ -20,7 +20,7 @@ export function SiteNav() {
 
   return (
     <header className="nav">
-      <a href={href('/', locale)} className="brand">Dev Mani Shukla</a>
+      <a href={href('/', locale)} className="brand">CommerceAtScale</a>
       <nav className="navlinks">
         {NAV[locale].map(([path, label]) => (
           <a key={path} href={href(path, locale)}>{label}</a>
