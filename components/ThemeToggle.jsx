@@ -22,9 +22,17 @@ export default function ThemeToggle() {
     setTheme(next);
   }
 
+  // The button shows the theme it will switch *to*, not the one you are in,
+  // so the label reads as the action rather than the current state.
+  const next = theme === 'dark' ? 'light' : 'dark';
+
   return (
-    <button className="toggle" onClick={toggle} aria-label="Toggle colour theme">
-      <span className="dot" />{theme ? theme.toUpperCase() : ''}
+    <button
+      className="toggle"
+      onClick={toggle}
+      aria-label={theme ? `Switch to ${next} theme` : 'Toggle colour theme'}
+    >
+      <span className="dot" />{theme ? next.toUpperCase() : ''}
     </button>
   );
 }

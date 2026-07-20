@@ -2,7 +2,7 @@ import TranslationNotice from '../../../components/TranslationNotice';
 
 import { pageMeta } from '../../../lib/seo';
 export const metadata = pageMeta({
-  title: 'IA pour architectes — Dev Mani Shukla',
+  title: 'IA pour architectes — Commerce at Scale',
   description: 'Utiliser l’IA pour rendre les documents d’architecture cohérents, sans lui céder le jugement.',
   path: '/ai',
   locale: 'fr',

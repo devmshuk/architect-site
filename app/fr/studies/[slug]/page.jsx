@@ -12,7 +12,7 @@ export function generateStaticParams() {
 export function generateMetadata({ params }) {
   const { frontmatter } = getStudy(params.slug, 'fr');
   return pageMeta({
-    title: `${frontmatter.title} — Dev Mani Shukla`,
+    title: `${frontmatter.title} — Commerce at Scale`,
     description: frontmatter.summary,
     path: `/studies/${params.slug}`,
     locale: 'fr',

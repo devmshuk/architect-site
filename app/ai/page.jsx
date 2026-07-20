@@ -1,7 +1,7 @@
 import { pageMeta } from '../../lib/seo';
 
 export const metadata = pageMeta({
-  title: 'AI for Architects — Dev Mani Shukla',
+  title: 'AI for Architects — Commerce at Scale',
   description: 'Using AI to make architecture writing consistent, without handing over the judgment.',
   path: '/ai',
   locale: 'en',

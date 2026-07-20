@@ -2,7 +2,7 @@ import TranslationNotice from '../../../components/TranslationNotice';
 
 import { pageMeta } from '../../../lib/seo';
 export const metadata = pageMeta({
-  title: 'Bibliothèque — Dev Mani Shukla',
+  title: 'Bibliothèque — Commerce at Scale',
   description: 'Modèles de conception pour le commerce à grande échelle : ce que chacun résout, quand l’utiliser et quand l’éviter.',
   path: '/library',
   locale: 'fr',

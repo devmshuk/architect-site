@@ -2,7 +2,7 @@ import TranslationNotice from '../../components/TranslationNotice';
 import { pageMeta } from '../../lib/seo';
 
 export const metadata = pageMeta({
-  title: 'Dev Mani Shukla — Architecture commerce à grande échelle',
+  title: 'Commerce at Scale — Notes de conception sur les plateformes de commerce',
   description:
     'Notes de conception sur les plateformes de commerce qui restent simples en grandissant : où placer les frontières, ce que chaque choix apporte et ce qu’il coûte.',
   path: '/',

@@ -1,7 +1,7 @@
 import { pageMeta } from '../../lib/seo';
 
 export const metadata = pageMeta({
-  title: 'Library — Dev Mani Shukla',
+  title: 'Library — Commerce at Scale',
   description: 'Patterns for commerce at scale: what each one solves, when to use it, and when not to.',
   path: '/library',
   locale: 'en',

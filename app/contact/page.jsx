@@ -1,7 +1,7 @@
 import { pageMeta } from '../../lib/seo';
 
 export const metadata = pageMeta({
-  title: 'Contact — Dev Mani Shukla',
+  title: 'Contact — Commerce at Scale',
   description: 'Get in touch about a design decision or how a commerce platform should grow.',
   path: '/contact',
   locale: 'en',
@@ -9,7 +9,7 @@ export const metadata = pageMeta({
 
 const channels = [
   ['EMAIL', 'devmanis.757@gmail.com', 'mailto:devmanis.757@gmail.com'],
-  ['LINKEDIN', 'linkedin.com/in/dev-mani-shukla-5a1a9714a', 'https://www.linkedin.com/in/dev-mani-shukla-5a1a9714a/'],
+  ['LINKEDIN', 'Dev Mani Shukla', 'https://www.linkedin.com/in/dev-mani-shukla-5a1a9714a/'],
   ['PHONE', '+91 98992 10128', 'tel:+919899210128'],
 ];
 

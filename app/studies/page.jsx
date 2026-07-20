@@ -2,7 +2,7 @@ import { getAllStudies } from '../../lib/studies';
 
 import { pageMeta } from '../../lib/seo';
 export const metadata = pageMeta({
-  title: 'Studies — Dev Mani Shukla',
+  title: 'Studies — Commerce at Scale',
   description: 'Design studies in commerce at scale: one problem each, the options, and the reasoning behind the choice.',
   path: '/studies',
   locale: 'en',

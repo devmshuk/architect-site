@@ -2,7 +2,7 @@ import TranslationNotice from '../../../components/TranslationNotice';
 
 import { pageMeta } from '../../../lib/seo';
 export const metadata = pageMeta({
-  title: 'À propos — Dev Mani Shukla',
+  title: 'À propos — Commerce at Scale',
   description: 'Ma façon d’aborder la conception de plateformes de commerce qui restent simples en grandissant.',
   path: '/about',
   locale: 'fr',

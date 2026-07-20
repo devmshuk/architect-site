@@ -2,7 +2,7 @@ import TranslationNotice from '../../../components/TranslationNotice';
 
 import { pageMeta } from '../../../lib/seo';
 export const metadata = pageMeta({
-  title: 'Contact — Dev Mani Shukla',
+  title: 'Contact — Commerce at Scale',
   description: 'Me contacter au sujet d’une décision de conception ou de l’évolution d’une plateforme de commerce.',
   path: '/contact',
   locale: 'fr',
@@ -10,7 +10,7 @@ export const metadata = pageMeta({
 
 const channels = [
   ['E-MAIL', 'devmanis.757@gmail.com', 'mailto:devmanis.757@gmail.com'],
-  ['LINKEDIN', 'linkedin.com/in/dev-mani-shukla-5a1a9714a', 'https://www.linkedin.com/in/dev-mani-shukla-5a1a9714a/'],
+  ['LINKEDIN', 'Dev Mani Shukla', 'https://www.linkedin.com/in/dev-mani-shukla-5a1a9714a/'],
   ['TÉLÉPHONE', '+91 98992 10128', 'tel:+919899210128'],
 ];
 

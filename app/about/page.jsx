@@ -1,7 +1,7 @@
 import { pageMeta } from '../../lib/seo';
 
 export const metadata = pageMeta({
-  title: 'About — Dev Mani Shukla',
+  title: 'About — Commerce at Scale',
   description: 'How I think about designing commerce platforms that stay simple as they grow.',
   path: '/about',
   locale: 'en',

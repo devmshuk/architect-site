@@ -25,7 +25,6 @@ export function SiteNav() {
         {NAV[locale].map(([path, label]) => (
           <a key={path} href={href(path, locale)}>{label}</a>
         ))}
-        <a href="/resume.pdf" target="_blank" rel="noopener">CV</a>
       </nav>
       <a
         className="lang"

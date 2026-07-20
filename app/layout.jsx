@@ -2,7 +2,7 @@ import './globals.css';
 import { SiteNav, SiteFooter } from '../components/SiteChrome';
 import { pageMeta, SITE_URL } from '../lib/seo';
 
-const TITLE = 'Dev Mani Shukla — Commerce Architecture at Scale';
+const TITLE = 'Commerce at Scale — Design notes on large commerce platforms';
 const DESCRIPTION =
   'Design notes on commerce platforms that stay simple as they grow: where to place the boundaries, what each choice buys, and what it costs.';
 

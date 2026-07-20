@@ -3,7 +3,7 @@ import TranslationNotice from '../../../components/TranslationNotice';
 
 import { pageMeta } from '../../../lib/seo';
 export const metadata = pageMeta({
-  title: 'Études — Dev Mani Shukla',
+  title: 'Études — Commerce at Scale',
   description: 'Études de conception sur le commerce à grande échelle : un problème, les options, et le raisonnement derrière le choix.',
   path: '/studies',
   locale: 'fr',
